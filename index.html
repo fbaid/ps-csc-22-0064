@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene shadow="type: pcfsoft" >
+
+      <!-- ASSETS (Textures for Tins) -->
+      <a-assets>
+        <img id="miloTexture" src="milo.png">
+        <img id="nidoTexture" src="nido.png">
+      </a-assets>
+
+      <!-- Floor -->
+      <a-plane 
+        position="0 0 0" 
+        rotation="-90 0 0" 
+        width="20" 
+        height="20" 
+        color="#cfcfcf"
+        shadow="receive: true">
+      </a-plane>
+
+      <!-- Background wall -->
+      <a-plane 
+        position="0 2 -5" 
+        width="20" 
+        height="10" 
+        color="#ffffff"
+        shadow="receive: true">
+      </a-plane>
+
+      <!-- TABLE TOP -->
+      <a-box 
+        position="0 1 0" 
+        width="2.5" 
+        height="0.1" 
+        depth="1.2" 
+        color="#8b4a26"
+        shadow="cast: true; receive: true">
+      </a-box>
+
+      <!-- TABLE LEGS -->
+      <a-box position="1.1 0.55 0.5" width="0.1" height="1.1" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+      <a-box position="-1.1 0.55 0.5" width="0.1" height="1.1" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+      <a-box position="1.1 0.55 -0.5" width="0.1" height="1.1" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+      <a-box position="-1.1 0.55 -0.5" width="0.1" height="1.1" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+
+      <!-- LEFT CHAIR -->
+      <!-- Seat -->
+<a-box position="-2 0.6 0" width="0.7" height="0.1" depth="0.7" color="#8b4a26" shadow="cast: true"></a-box>
+
+<!-- Backrest -->
+<a-box position="-2 1.2 -0.3" width="0.7" height="1" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+
+<!-- Legs -->
+<a-box position="-2.3 0.3 0.3" width="0.1" height="0.6" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+<a-box position="-1.7 0.3 0.3" width="0.1" height="0.6" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+<a-box position="-2.3 0.3 -0.3" width="0.1" height="0.6" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+<a-box position="-1.7 0.3 -0.3" width="0.1" height="0.6" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+
+      <!-- RIGHT CHAIR -->
+      <!-- Seat -->
+<a-box position="2 0.6 0" width="0.7" height="0.1" depth="0.7" color="#8b4a26" shadow="cast: true"></a-box>
+
+<!-- Backrest -->
+<a-box position="2 1.2 -0.3" width="0.7" height="1" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+
+<!-- Legs -->
+<a-box position="1.7 0.3 0.3" width="0.1" height="0.6" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+<a-box position="2.3 0.3 0.3" width="0.1" height="0.6" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+<a-box position="1.7 0.3 -0.3" width="0.1" height="0.6" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+<a-box position="2.3 0.3 -0.3" width="0.1" height="0.6" depth="0.1" color="#8b4a26" shadow="cast: true"></a-box>
+
+      <!-- MILO TIN (with texture) -->
+      <a-cylinder 
+        position="0 1.15 0" 
+        height="0.4" 
+        radius="0.18" 
+        src="#miloTexture"
+        shadow="cast: true">
+      </a-cylinder>
+
+      <!-- NIDO TIN (with texture) -->
+      <a-cylinder 
+        position="0.45 1.15 0" 
+        height="0.35" 
+        radius="0.15" 
+        src="#nidoTexture"
+        shadow="cast: true">
+      </a-cylinder>
+
+      <!-- WHITE CUP -->
+      <a-cylinder 
+        position="-0.6 1.1 0.1" 
+        height="0.2" 
+        radius="0.1" 
+        color="#ffffff"
+        shadow="cast: true">
+      </a-cylinder>
+
+      <!-- BLACK CUP -->
+      <a-cylinder 
+        position="0.8 1.1 0.1" 
+        height="0.2" 
+        radius="0.1" 
+        color="#333333"
+        shadow="cast: true">
+      </a-cylinder>
+
+      <!-- Lights -->
+      <a-entity light="type: directional; intensity: 1; castShadow: true" position="2 5 3"></a-entity>
+      <a-entity light="type: ambient; intensity: 0.4"></a-entity>
+
+      <!-- VR Camera Rig -->
+      <a-entity id="rig" movement-controls position="0 1.6 4">
+        <a-entity camera look-controls="pointerLockEnabled: true" position="0 0 0"></a-entity>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
